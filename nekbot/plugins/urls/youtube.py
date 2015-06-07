@@ -1,6 +1,13 @@
+from pafy.pafy import Pafy
+from nekbot import settings
+
 __author__ = 'nekmo'
 
 import pafy
+
+if hasattr(settings, 'GOOGLE_API_KEY'):
+    setattr(Pafy, 'api_key', settings.GOOGLE_API_KEY)
+
 
 class YoutubeMetadata(object):
     source_url = 'youtube.com'
