@@ -6,6 +6,10 @@ include contributors.txt
 include nekbot/__init__.py
 include nekbot/plugins/__init__.py
 include nekbot/plugins/urls/__init__.py
+include nekbot/plugins/urls/generic.py
+include nekbot/plugins/urls/meneame.py
+include nekbot/plugins/urls/urlinfo.py
+include nekbot/plugins/urls/youtube.py
 include requirements.txt
 include setup.cfg
 include setup.py
