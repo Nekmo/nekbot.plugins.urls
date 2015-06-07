@@ -40,7 +40,6 @@ class YoutubeMetadata(object):
         self.data = requests.get(API_URL, params={'key': settings.GOOGLE_API_KEY,
                                                   'id': url_id,
                                                   'part': 'contentDetails,snippet'}).json()
-        print(self.data)
         if not self.data.get('items') or not len(self.data['items']):
             raise Exception(self.data)
         else:
