@@ -1,6 +1,7 @@
 # coding=utf-8
 import re
 import requests
+import HTMLParser
 
 __author__ = 'nekmo'
 
@@ -15,7 +16,7 @@ class MeneameMetadata(object):
         with open('/tmp/debug', 'wb') as f:
             f.write(data)
         if self.title:
-            self.title = self.title[0].decode('utf-8')
+            self.title = HTMLParser.HTMLParser().unescape(self.title[0].decode('utf-8'))
         else:
             self.title = None
         self.authors = re.findall('<a href="/user/[^/]+/history">([^<]+)</a>', data,
